@@ -30,16 +30,18 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
   });
 
-  //style for odd rows
-  const oddRowStyle = {
+  // Style for odd rows
+  const oddRowStyle: React.CSSProperties = {
     backgroundColor: "#f0f0f0",
   };
-  //style for even rows
-  const evenRowStyle = {
+
+  // Style for even rows
+  const evenRowStyle: React.CSSProperties = {
     backgroundColor: "#F5F5F5",
   };
-  //styletruncated description
-  const truncatedStyle = {
+
+  // Style for truncated description
+  const truncatedStyle: React.CSSProperties = {
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
@@ -65,14 +67,15 @@ export function DataTable<TData, TValue>({
           ))}
         </TableHead>
         <TableBody>
-          {table.getRowModel().rows?.length ? (
+          {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row, index) => {
-              const rowStyle = index % 2 === 0 ? evenRowStyle : oddRowStyle;
+              const rowStyle: React.CSSProperties =
+                index % 2 === 0 ? evenRowStyle : oddRowStyle;
               return (
                 <TableRow
                   key={row.id}
                   style={{ ...rowStyle, color: "white" }}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected() ? "selected" : undefined}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
