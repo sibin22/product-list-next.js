@@ -1,7 +1,7 @@
 import React from "react";
 import { GetServerSideProps } from "next";
 import ProductTable from "./products";
-import { Product } from "../types";
+import { Product } from "../../util/types";
 
 interface ProductsPageProps {
   products: Product[];
