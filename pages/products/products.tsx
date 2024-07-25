@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { Product, Review } from "../types";
+import { Product, Review } from "../../util/types";
 import { Button } from "@mui/material";
 import { ProductReviewModal } from "./ProductModal";
 import { DataTable } from "./table";

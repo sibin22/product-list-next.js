@@ -9,7 +9,7 @@ import {
   Rating,
 } from "@mui/material";
 import styled from "@emotion/styled";
-import { Review } from "../types";
+import { Review } from "../../util/types";
 import moment from "moment";
 
 interface ProductReviewModalProps {
